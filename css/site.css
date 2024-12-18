@@ -565,11 +565,6 @@ h2:hover {
    width: 105px;
    height: 270px;
    border:none;
-   transition: 0.15s;
-   cursor: pointer;
-}
-.main.cars.img:hover {
-    transform: scale(1.1);
 }
 .flex-row {
     position: absolute;
@@ -596,7 +591,7 @@ h2:hover {
     top: 500px;
     display: grid;
     grid-template-columns: repeat(14, 100px);
-    grid-template-rows: repeat(2, 150px);
+    grid-template-rows: repeat(30, 150px);
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -612,4 +607,163 @@ h2:hover {
 }
 .germany--cars--text:hover {
     opacity: 0.8;  
+}
+.car-audi {
+    grid-row: 3 / 4;
+    grid-column: 3/ 8;
+}
+.audi--logo {
+    grid-row: 4 / 4;
+    grid-column: 7/ 8;
+    box-sizing: border-box;
+   font-size: 35px;
+   font-weight: 900;
+   font-family:Georgia, 'Times New Roman', Times, serif;
+   letter-spacing: 20px;
+   width: 205px;
+   text-shadow: 0 10px 15px rgba(0, 00, 0, 0.5);
+
+}
+.audi--a4--logo {
+    grid-row: 5/ 7;
+    justify-self: center;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1) ;
+    padding: 5px;
+    width: 300px;
+    border-radius: 15px;
+    grid-column: 2/ 4;
+    font-size: 30px;
+    font-weight: 900;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 10px;
+    text-shadow: 0 10px 15px rgba(0, 00, 0, 0.5);
+}
+.audi-img--back {
+    grid-row: 3 / 3;
+    grid-column: 5/ 8;
+    margin-left: 45px;
+    text-align: center;
+    background-color: transparent;
+    z-index: -99;
+    background-position: center;
+    filter: drop-shadow(0 5px 9px rgba(255, 255, 255, 0.953));
+}
+.audi--a4 {
+    grid-row: 6/ 6;
+    grid-column: 3/ 4;
+    font-size: 25px;
+    font-weight: 900;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 10px;
+}
+.after-audi {
+    grid-row: 8/ 8;
+    grid-column: 1/ 4;
+    overflow: hidden;
+    background-color: black;
+    color: white;
+    width: 485px;
+    padding: 5px;
+    opacity: 0.6;
+    border-end-end-radius: 50px;
+    border-top-right-radius: 50px;
+    transition: all 0.2s;
+    box-shadow: 0 2px 3px 1px rgba(0, 0, 0, 0.5);
+ }
+.audi--a4 + p {
+    width: 350px;
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    grid-row: 5/ 5;
+    grid-column: 1 / 3;
+    margin-left: 75px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    margin-top: 15px ;
+}
+.audi-img {
+      background-image: url(../JAva/img/audi_a4_front.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.9;
+      width: inherit;
+      height: 85vh;
+      z-index: -99;
+      border-radius: 25px;
+      grid-row: 4/ 14;
+      grid-column: 1 / 15;
+}
+.audi-svg {
+    position: relative;
+    top: 745px;
+    width: 450px;
+    transform: rotate(180deg);
+    opacity: 0.4;
+    margin-left: -18px;
+    grid-row: 6/ 9;
+    grid-column:  6/ 10;
+}
+.audi-img-1 {
+    background-image: url(../JAva/img/audi_a4_salon.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.9;
+    width: inherit;
+    height: 85vh;
+    z-index: -99;
+    border-radius: 25px;
+    grid-row: 7/ 25;
+    grid-column: 1 / 15;
+}
+.salon {
+    grid-row: 16/ 16;
+    grid-column: 1/ 4;
+    background-color: white;
+    color: black;
+}
+.audi-img-2 {
+    background-image: url(../JAva/img/audi_a4_back.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.9;
+    width: inherit;
+    height: 85vh;
+    z-index: -99;
+    border-radius: 25px;
+    grid-row: 20/ 26;
+    grid-column: 1 / 15;
+}
+.audi-svg-back {
+    position: relative;
+    top: 745px;
+    width: 450px;
+    transform: rotate(180deg);
+    opacity: 0.4;
+    margin-left: -18px;
+    grid-row: 13 / 16;
+    grid-column:  6/ 10;
+}
+.back {
+    grid-row: 21 / 23 ;
+    grid-column: 1 / 4;
+}
+.audi--q8--logo {
+    grid-row: 26/ 26;
+    grid-column: 2/ 4;
+    justify-self: center;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1) ;
+    padding: 5px;
+    width: 300px;
+    border-radius: 15px;
+    font-size: 30px;
+    font-weight: 900;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 10px;
+    text-shadow: 0 10px 15px rgba(0, 00, 0, 0.5);
 }

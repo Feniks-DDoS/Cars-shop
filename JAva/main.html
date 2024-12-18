@@ -12,10 +12,13 @@
     <nav class="header nav">
       <ul>
         <li>
-          <a href="#">&cudarrr;Help</a>
+          <a href="#">&cudarrr;Log in</a>
           <ul>
             <li>
-              <a href="#buy">Buy</a>
+              <a href="#log-in">Log in</a>
+            </li>
+            <li>
+              <a href="#help">Help</a>
             </li>
           </ul>
         </li>
@@ -319,9 +322,11 @@
     </section>
     <section class="main cars"  id="buy">
       <h2 class="flex-row">Buy now end take new tires for free</h2>
+      <form action="./process.html" method="get">
       <button class="btn now">Buy now!</button>
+       </form>
       <article class="main cars img">
-        <img src="./img/cars.png" alt="many cars">
+        <img src="./img/cars.png" alt="many cars" loading="lazy">
       </article>
     </section>
       <button type="button" class="up" href="#">
@@ -331,49 +336,86 @@
       </button>
       <section class="main--germany--car">
         <h2 class="germany--cars--text">Germany cars</h2>
-        <article class="car-audi">
-        <h3 class="audi">Audi</h3>
-        <div>
-              <h4 id="audi" class="audi--a4">Audi A4</h4>
+        <h3 class="audi--logo">Audi</h3>
+        <img class="audi-img--back" src="./img/audi.logo.png" alt="audi-cars" loading="lazy" width="500px"  >
+        <h4 class="audi--a4--logo">Audi A4</h4>
+        <div class="after-audi">
+          <h5 id="audi" class="audi--a4">Dynamic and sleek design</h5>
           <p>
-
-         </p>
-          <img class="Audi-img" src="" alt="audi_A4">
-          <p>
-
-          </p>
-          <img  class="Audi-img" src="" alt="audi_A4">
-          <p>
-
-         </p>
-          <img  class="Audi-img" src="" alt="audi_A4">
-          <p>
-
+            The best-selling Audi A4 represents the premium mid-range in Europe, but with sporty polished details, it is now more dynamic and sophisticated.
           </p>
         </div>
-        </article>
-        <!--
-        <article class="car-audi-q8">
-          <h4 class="audi-text audi-q8">Audi Q8</h4>
-          <div class="conteiner-scroll">
+          <article class="audi-img"></article>
+            <svg  class="audi-svg"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="20%"
+   viewBox="0 0 14 14"
+   id="svg2">
+  <metadata
+     id="metadata8">
+  </metadata>
+  <defs
+     id="defs6" />
+  <rect
+     width="14"
+     height="14"
+     x="0"
+     y="0"
+     id="canvas"
+     style="fill:none;stroke:none;visibility:hidden" />
+  <path
+     d="M 14,5 6.9999999,0.99999997 0,5 0,7.0000002 1.5,6.35 l 1e-7,7.65 1.4999998,0 0,-8.2999998 L 6.9999999,4 11,5.7000002 11,14 l 1.5,0 0,-7.65 1.5,0.6500002 z"
+     id="basic-hut" style="fill:#000000;fill-opacity:1;stroke:none" />
+          </svg>
+          <div class="after-audi salon">
+          <h5 class="audi--a4">Advanced interface</h5>
           <p>
-
-          </p>
-          <img class="Audi-img-q8" src="./img/audi_q8.jpg" alt="Audi q8">
-          <p>
-
-          </p>
-          <img class="Audi-img-q8" src="./img/audi_q8_back.jpg" alt="Audi q8">
-          <p>
-
-          </p>
-          <img class="Audi-img-q8" src="./img/audi_q8_salon.jpg" alt="Audi q8">
-          <p>
-
+            The touchscreen-style MMI navigation features a 10.1-inch high-resolution monitor 
+            display that provides intuitive control of a wide range of infotainment
+             and useful features as if it were a smartphone screen.
           </p>
           </div>
-        </article>
-        -->
+          <article class="audi-img-1"></article>
+          <div class="after-audi back">
+          <h5 class="audi--a4">Dynamic and sporty style</h5>
+          <p>
+            The Audi A4 has an even more dynamic and sporty style. The overhanging blister fenders, 
+            which inherit the Quattro genes, create a toned shape, and the side sills accentuate the side view.
+         </p>
+          </div>
+          <svg  class="audi-svg-back"
+          xmlns:dc="http://purl.org/dc/elements/1.1/"
+          xmlns:cc="http://creativecommons.org/ns#"
+          xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns="http://www.w3.org/2000/svg"
+          version="1.1"
+          width="20%"
+          viewBox="0 0 14 14"
+          id="svg2">
+         <metadata
+            id="metadata8">
+         </metadata>
+         <defs
+            id="defs6" />
+         <rect
+            width="14"
+            height="14"
+            x="0"
+            y="0"
+            id="canvas"
+            style="fill:none;stroke:none;visibility:hidden" />
+         <path
+            d="M 14,5 6.9999999,0.99999997 0,5 0,7.0000002 1.5,6.35 l 1e-7,7.65 1.4999998,0 0,-8.2999998 L 6.9999999,4 11,5.7000002 11,14 l 1.5,0 0,-7.65 1.5,0.6500002 z"
+            id="basic-hut" style="fill:#000000;fill-opacity:1;stroke:none" />
+                 </svg>
+          <article class="audi-img-2"></article>
+          <h4 class="audi--q8--logo">Audi Q8</h4>
       </section>
 </main>
 </body>
