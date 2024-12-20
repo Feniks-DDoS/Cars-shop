@@ -22,10 +22,22 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 50px;
     padding: 0 60px;
     z-index: 200;
     background-color: rgb(255, 255, 255);
+    animation-name: scroll-header;
+    animation-timing-function: linear;
+    animation-range: 100px 350px;
+    animation-fill-mode: both;
+    animation-timeline: scroll();
 } 
+@keyframes scroll-header {
+   to {
+        height: 25px ;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    }
+}
 .header.logo {
     padding: 5px;
     box-sizing: border-box;
@@ -79,19 +91,120 @@ header {
 }
 .main {
     position: relative;
-    top: 200px;
+    top: 1000px;
     left: 0;
     right: 0;
     height: 100vh;
 }
+.middle {
+    width:  65vw;
+    height: 500px;
+    overflow: hidden;
+    user-select: none;
+ }
+ .slider {
+    position:absolute;
+    top: -85%;
+    left: 50%;
+    translate: -50% -50%;
+    opacity: 0.9;
+    border-radius: 15px;
+    animation-name: scroll-animation-end;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    view-timeline-name: --scroll-video-end;
+    animation-timeline: --scroll-video-end;
+    animation-range: 45% 75%;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.7);
+ 
+ }
+ .navigation {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    translate: -50%;
+    display: flex;
+ 
+ }
+ .bar {
+    width: 25px;
+    height: 15px;
+    margin: 6px;
+    cursor: pointer;
+    background-color: white;
+    opacity: 0.6;
+    border-radius: 15px;
+    transition: all 4s ease-in-out;
+    visibility: hidden;
+ }
+ .bar:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+    background-color: red;
+ }
+ input[name="r"] {
+    position: absolute;
+    visibility: hidden;
+ }
+ .slides {
+    width: 400%;
+    height: 100%;
+    display: flex;
+ }
+ .slide {
+    width: 25%;
+    transition: all 4s ease-in-out; 
+ }
+ .slide img {
+    width: 100%;
+    height: 100%;
+ }
+ #r1:checked ~ .s1 {
+    animation-name: bar-animation;
+    animation-duration: 20s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-delay: 1.5s;
+    
+ }
+ @keyframes scroll-animation-end {
+    to {
+        translate: -50% -50% ;
+        opacity: 0;
+    }
+ }
+ @keyframes bar-animation {
+    0% {
+       margin-left: 0%;
+       animation-delay: 1.5s;
+    }
+    25% {
+       margin-left: -25%;
+       animation-delay: 1.5s;
+    }
+    50% {
+       margin-left: -50%;
+       animation-delay: 1.5s;
+    }
+    75% {
+       margin-left: -75%;
+       animation-delay: 1.5s;
+    }
+    100% {
+       margin-left: 0%;
+       animation-delay: 1.5s;
+    }
+ }
+/*
 .nav-search {
     position: relative;
     display: flex;
     align-items: center;
     width: 375px;
     height: 250px;
-    left: 950px;
-    top: -50px;
+    left: 1100px;
+    top: -250px;
     box-shadow: 0 5px 6px rgba(5, 55, 5, 0.5);
     border-radius: 15px;
     padding: 15px 25px;
@@ -113,6 +226,7 @@ header {
     bottom: 100px;
     width: 325px;
     border-radius: 15px;
+    border-color: green;
     border:none;
 }
 .int-search:hover {
@@ -139,6 +253,7 @@ header {
 .int-search::placeholder {
   color: rgba(43, 0, 255, 0.6);
 }
+  */
 .svg.st1 {
     filter: drop-shadow(0 1px 2px rgb(255, 230, 0));
 }
@@ -152,6 +267,12 @@ h2 {
     text-align: center;
     color: black;
     box-shadow: inset 0 5px 8px rgba(53, 47, 47, 0.5);
+    animation-name: scroll-animation ;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    view-timeline-name: --scroll-animation-view;
+    animation-timeline: --scroll-animation-view;
+    animation-range: 10% 40%;
 
 }
 h2:hover {
@@ -168,6 +289,18 @@ h2:hover {
     text-align: center;
     align-items: center;
     justify-content: center;
+    animation-name: scroll-animation ;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    view-timeline-name: --scroll-animation-view;
+    animation-timeline: --scroll-animation-view;
+    animation-range: 10% 40%;
+}
+@keyframes scroll-animation {
+       from {
+        translate: 0 30%;
+        opacity: 0;
+       }
 }
 .about.us-support {
     margin-bottom: 15px;
@@ -183,10 +316,10 @@ h2:hover {
 .about.us-support:hover {
     filter:drop-shadow(0 1px 2px rgba(11, 11, 9, 0.15));  
     transform: scale(1.1);
-    box-shadow: inset 0 4px 5px 4px rgb(228, 223, 210);
     color: rgba(255, 255, 255, 0.777);
     background-color: rgba(11, 11, 9, 0.1);
     cursor: pointer;
+    box-shadow: inset 0 4px 5px 4px rgb(228, 223, 210);
 }
 .about.us-guality {
     margin-bottom: 15px;
@@ -216,7 +349,13 @@ h2:hover {
     border-radius: 50px;
     font-size: 20px;
     font-weight: 400;
-
+    animation:reability-fast-end linear forwards;
+    animation-timeline: view(30px 15px);
+}
+@keyframes reability-fast-end {
+    to {
+        opacity: 0.2;
+    }
 }
 .about.us-fast-delivery:hover {
     filter:drop-shadow(0 1px 2px rgba(11, 11, 9, 0.15));  
@@ -235,7 +374,14 @@ h2:hover {
     border-radius: 50px;
     font-size: 20px;
     font-weight: 400;
+    animation:reability-end linear forwards;
+    animation-timeline: view(45px 25px);
    
+}
+@keyframes reability-end {
+    to {
+        opacity: 0;
+    }
 }
 .about.us-reliability:hover {
     filter:drop-shadow(0 1px 2px rgba(11, 11, 9, 0.15));  
@@ -252,6 +398,19 @@ h2:hover {
     text-align: center;
     align-items: center;
     justify-content: center;
+    animation-name: scroll-conteiner ;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    view-timeline-name: --scroll-scroll-conteiner;
+    animation-timeline: --scroll-scroll-conteiner;
+    animation-range: 15% 45%;
+
+
+}
+@keyframes scroll-conteiner {
+    from {
+         opacity: 0;
+    }
 }
 .office--location {
     position:relative;
@@ -269,19 +428,49 @@ h2:hover {
 .Canada {
     grid-row: 3 / 4;
     grid-column: 1/ 3;
-    border: none;
+    position: relative;
+    --border-width: 0.25em;
+	--border-radius: 25px;
+	--background-color: rgb(207, 201, 189);
+    --conic-gradient-color:red 20%, black 50%, red 100%;
+    padding: 5px;
+    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.5);
     transition: all 0.3s;
-    border-radius: 25px;
+    background-color: var(--background-color);
+    border: 2px var(--border-width) transparent;
+    border-radius: calc(var(--border-radius) - var(--border-width));
 }
-.Canada:hover {
-       transform: scale(1.1);
-       box-shadow: 0 1px 2px rgba(255, 0, 0, 0.3);  
+.Canada::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: conic-gradient(from var(--angle), var(--conic-gradient-color), var(--background-color));
+    z-index: -1;
+    border-radius: var(--border-radius);
+    margin: calc(-2 * var(--border-width));
+    transition: all 0.3s;
 }
+ @property --angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+ }
+@keyframes conic-animation {
+    0% {
+       --angle: -1deg;
+    }
+    100% {
+       --angle: 360deg;
+    }
+ }
+ .Canada:hover::before {
+    animation: conic-animation 2s linear infinite;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+ }
 .Canada:hover>h3 {
     background-image: linear-gradient(90deg, rgba(255,0,0,1) 8%,  rgb(83, 83, 83) 71%, rgba(255,0,0,1) 98%);
     background-position: center;
@@ -297,19 +486,7 @@ h2:hover {
     box-sizing: border-box;
     transition: all 0.3s;
 }
-.canada--svg::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 0px;
-}
-.canada--svg:active::before {
-    height: 100%;
-}
-.canada--svg:active{
+.canada--svg:active {
     transform: rotate(180deg);
 }
 .canada--shop--address {
@@ -318,20 +495,49 @@ h2:hover {
 .USA {
     grid-row: 3 / 3;
     grid-column: 4 / 7 ;
-    border: none;
     height: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.5);
     transition: all 0.3s;
-    border-radius: 25px;
+    position: relative;
+    --border-width: 0.25em;
+	--border-radius: 25px;
+	--background-color: rgb(207, 201, 189);
+    --conic-gradient-color:rgb(34, 0, 255) 20%, black 50%, rgb(0, 26, 255) 100%;
+    padding: 5px;
+    background-color: var(--background-color);
+    border: 2px var(--border-width) transparent;
+    border-radius: calc(var(--border-radius) - var(--border-width));
 }
-.USA:hover {
-    transform: scale(1.1);
-    box-shadow: 0 1px 2px  rgba(15, 19, 255, 0.587);
-}
+.USA::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: conic-gradient(from var(--angle), var(--conic-gradient-color), var(--background-color));
+    z-index: -1;
+    border-radius: var(--border-radius);
+    margin: calc(-2 * var(--border-width));
+    transition: all 0.3s;
+ }
+ @property --angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+ }
+@keyframes conic-animation-usa {
+    0% {
+       --angle: -1deg;
+    }
+    100% {
+       --angle: 360deg;
+    }
+ }
+ .USA:hover::before {
+    animation: conic-animation-usa 2s linear infinite;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+ }
 .usa--svg {
     position: relative;
     width: 50px;
@@ -365,16 +571,49 @@ h2:hover {
 .Japan {
     grid-row: 3 / 4;
     grid-column: 8 / 10 ;
-    border: none;
     height: 150px;
+    position: relative;
+    --border-width: 0.25em;
+	--border-radius: 25px;
+	--background-color: rgb(207, 201, 189);
+    --conic-gradient-color:red 20%, black 50%, red 100%;
+    padding: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.5);
     transition: all 0.3s;
-    border-radius: 25px;
+    background-color: var(--background-color);
+    border: 2px var(--border-width) transparent;
+    border-radius: calc(var(--border-radius) - var(--border-width));
 }
+.Japan::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: conic-gradient(from var(--angle), var(--conic-gradient-color), var(--background-color));
+    z-index: -1;
+    border-radius: var(--border-radius);
+    margin: calc(-2 * var(--border-width));
+    transition: all 0.3s;
+ }
+ @property --angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+ }
+@keyframes conic-animation {
+    0% {
+       --angle: -1deg;
+    }
+    100% {
+       --angle: 360deg;
+    }
+ }
+ .Japan:hover::before {
+    animation: conic-animation 2s linear infinite;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+ }
 .japan--svg {
     position: relative;
     width: 50px;
@@ -384,10 +623,6 @@ h2:hover {
 }
 .japan--svg:active{
     transform: rotate(180deg);
-}
-.Japan:hover {
-    transform: scale(1.1);
-    box-shadow: 0 1px 2px  rgba(253, 1, 1, 0.587);
 }
 .Japan:hover>h3 {
     background-image: linear-gradient(90deg, rgb(49, 28, 28) 8%,  rgb(255, 0, 0) 71%, rgb(49, 28, 28) 98%);
@@ -400,20 +635,49 @@ h2:hover {
 .Russia {
     grid-row: 5/ 6;
     grid-column: 2 / 5 ;
-    border: none;
     height: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.5);
     transition: all 0.3s;
-    border-radius: 25px;
+    position: relative;
+    --border-width: 0.25em;
+	--border-radius: 25px;
+	--background-color: rgb(207, 201, 189);
+    --conic-gradient-color:rgb(34, 0, 255) 20%, black 50%, rgb(0, 26, 255) 100%;
+    padding: 5px;
+    background-color: var(--background-color);
+    border: 2px var(--border-width) transparent;
+    border-radius: calc(var(--border-radius) - var(--border-width));
 }
-.Russia:hover {
-    transform: scale(1.1);
-    box-shadow: 0 1px 2px  rgba(30, 1, 253, 0.587);
-}
+.Russia::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: conic-gradient(from var(--angle), var(--conic-gradient-color), var(--background-color));
+    z-index: -1;
+    border-radius: var(--border-radius);
+    margin: calc(-2 * var(--border-width));
+    transition: all 0.3s;
+ }
+ @property --angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+ }
+@keyframes conic-animation-usa {
+    0% {
+       --angle: -1deg;
+    }
+    100% {
+       --angle: 360deg;
+    }
+ }
+ .Russia:hover::before {
+    animation: conic-animation-usa 2s linear infinite;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+ }
 .Russia:hover>h3 {
     background-image: linear-gradient(90deg, rgb(49, 28, 28) 8%,  rgb(0, 13, 255) 71%, rgb(49, 28, 28) 98%);
     background-position: center;
@@ -435,16 +699,49 @@ h2:hover {
 .Great--Britain {
     grid-row: 5/ 6;
     grid-column: 6 / 9 ;
-    border: none;
     height: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.5);
     transition: all 0.3s;
-    border-radius: 25px;
+    position: relative;
+    --border-width: 0.25em;
+	--border-radius: 25px;
+	--background-color: rgb(207, 201, 189);
+    --conic-gradient-color:rgb(34, 0, 255) 20%, rgb(0, 0, 0) 50%, rgb(255, 19, 19 )75%, rgb(34, 0, 255)100%;
+    padding: 3px;
+    background-color: var(--background-color);
+    border: 2px var(--border-width) transparent;
+    border-radius: calc(var(--border-radius) - var(--border-width));
 }
+.Great--Britain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: conic-gradient(from var(--angle), var(--conic-gradient-color), var(--background-color));
+    z-index: -1;
+    border-radius: var(--border-radius);
+    margin: calc(-2 * var(--border-width));
+    transition: all 0.3s;
+ }
+ @property --angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+ }
+@keyframes conic-animation-great {
+    0% {
+       --angle: -1deg;
+    }
+    100% {
+       --angle: 360deg;
+    }
+ }
+ .Great--Britain:hover::before {
+    animation: conic-animation-great 2s linear infinite;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+ }
 .Great--Britain--svg {
     position: relative;
     width: 50px;
@@ -454,10 +751,6 @@ h2:hover {
 }
 .Great--Britain--svg:active {
     transform: rotate(180deg);
-}
-.Great--Britain:hover {
-    transform: scale(1.1);
-    box-shadow:  0 1px 2px  rgb(255, 0, 0);
 }
 .Great--Britain:hover>h3 {
     background-image: linear-gradient(90deg, rgb(255, 0, 0) 8%,  rgb(0, 13, 255) 71%, rgb(49, 28, 28) 98%);
@@ -470,20 +763,56 @@ h2:hover {
 .France {
     grid-row: 7/ 8;
     grid-column: 4/ 7 ;
-    border: none;
     height: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.5);
     transition: all 0.3s;
-    border-radius: 25px;
+    position: relative;
+    --border-width: 0.25em;
+	--border-radius: 25px;
+	--background-color: rgb(207, 201, 189);
+    --conic-gradient-color:rgb(34, 0, 255) 20%, rgb(0, 0, 0) 50%, rgb(255, 19, 19 )75%, rgb(34, 0, 255)100%;
+    padding: 3px;
+    background-color: var(--background-color);
+    border: 2px var(--border-width) transparent;
+    border-radius: calc(var(--border-radius) - var(--border-width));
 }
-.France:hover {
-    transform: scale(1.1);
-    box-shadow:  0 1px 2px  rgb(255, 255, 255);
+@keyframes france-end {
+    to {
+        opacity: 0;
+    }
 }
+.France::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: conic-gradient(from var(--angle), var(--conic-gradient-color), var(--background-color));
+    z-index: -1;
+    border-radius: var(--border-radius);
+    margin: calc(-2 * var(--border-width));
+    transition: all 0.3s;
+    animation:reability-end linear forwards;
+    animation-timeline: view(60px 75px);
+ }
+ @property --angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+ }
+@keyframes conic-animation-great {
+    0% {
+       --angle: -1deg;
+    }
+    100% {
+       --angle: 360deg;
+    }
+} 
+ .France:hover::before {
+    animation: conic-animation-great 2s linear infinite;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+ }
 .France:hover>h3 {
     background-image: linear-gradient(90deg, rgb(0, 13, 255) 8%,  rgb(49, 28, 28)  71%,  rgb(255, 0, 0)98%);
     background-position: center;
@@ -558,13 +887,31 @@ h2:hover {
 .btn.now:active {
     opacity: 0.4;
 }
-.main.cars.img {
+.main.cars.img{
     position: absolute;
     top: 150px;
    left: 375px;
    width: 105px;
    height: 270px;
-   border:none;
+}
+.main.cars.img {
+    animation-name: cars--img;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    translate:0 1;
+    width: max-content;
+}
+@keyframes cars--img {
+    30% {
+        filter: drop-shadow(0 4px 5px  rgba(255 255 255 0.5));
+    }
+    50% {
+         filter: drop-shadow(0 4px 5px rgba(255, 0, 0, 0.961));
+    }
+    100% {
+        filter: drop-shadow(0 4px 5px rgb(0, 98, 255));
+    }
 }
 .flex-row {
     position: absolute;
@@ -591,7 +938,7 @@ h2:hover {
     top: 500px;
     display: grid;
     grid-template-columns: repeat(14, 100px);
-    grid-template-rows: repeat(30, 150px);
+    grid-template-rows: repeat(75, 150px);
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -605,8 +952,25 @@ h2:hover {
     background-size: 150px;
     color: white;
 }
+@keyframes germany-text { 
+30% {
+    box-shadow: 0 4px 6px rgb(255, 217, 0);
+}
+60% {
+    box-shadow: 0 4px 6px rgb(0, 0, 0);
+}
+100% {
+    box-shadow: 0 4px 6px rgb(255, 0, 0);
+}
+
+}
 .germany--cars--text:hover {
-    opacity: 0.8;  
+ opacity: 0.8;  
+animation: germany-text;
+animation-duration: 2s;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+animation-direction: alternate;
 }
 .car-audi {
     grid-row: 3 / 4;
@@ -648,6 +1012,15 @@ h2:hover {
     z-index: -99;
     background-position: center;
     filter: drop-shadow(0 5px 9px rgba(255, 255, 255, 0.953));
+    animation: audi-img-logo-animation linear forwards;
+    animation-timeline: view( );
+    animation-range: 25% 45%;
+    scale: 0;
+}
+@keyframes audi-img-logo-animation {
+    to {
+        scale: 1;
+    }
 }
 .audi--a4 {
     grid-row: 6/ 6;
@@ -665,11 +1038,21 @@ h2:hover {
     color: white;
     width: 485px;
     padding: 5px;
-    opacity: 0.6;
+    opacity: 0;
     border-end-end-radius: 50px;
     border-top-right-radius: 50px;
     transition: all 0.2s;
     box-shadow: 0 2px 3px 1px rgba(0, 0, 0, 0.5);
+    animation: after-audi linear forwards;
+    animation-timeline: view(35px 15px );
+    animation-range: 15% 45%;
+    translate: -150% 0;
+ }
+ @keyframes after-audi {
+    to {
+        opacity: 0.6;
+        translate: 0 0;
+    }
  }
 .audi--a4 + p {
     width: 350px;
@@ -688,36 +1071,60 @@ h2:hover {
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-      opacity: 0.9;
+      opacity: 0;
       width: inherit;
       height: 85vh;
       z-index: -99;
       border-radius: 25px;
       grid-row: 4/ 14;
       grid-column: 1 / 15;
+      animation: audi-img linear forwards;
+      animation-timeline: view(35px 15px );
+      animation-range: 15% 45%;
+      translate: 100% 0;
+}
+@keyframes audi-img {
+    to {
+        translate: 0 0;
+        opacity: 0.9;
+    }
 }
 .audi-svg {
     position: relative;
     top: 745px;
     width: 450px;
     transform: rotate(180deg);
-    opacity: 0.4;
     margin-left: -18px;
     grid-row: 6/ 9;
     grid-column:  6/ 10;
+    animation: audi-svg linear forwards;
+    animation-timeline: view(35px 15px );
+    animation-range: 15% 45%;
+    translate: 0 -50%;
+    opacity: 0;
+}
+@keyframes audi-svg {
+    to {
+        translate: 0 0;
+        opacity: 0.4;
+    }
 }
 .audi-img-1 {
     background-image: url(../JAva/img/audi_a4_salon.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    opacity: 0.9;
+    opacity: 0;
     width: inherit;
     height: 85vh;
     z-index: -99;
     border-radius: 25px;
     grid-row: 7/ 25;
     grid-column: 1 / 15;
+    animation: audi-img linear forwards;
+    animation-timeline: view(35px 15px );
+    animation-range: 15% 45%;
+    translate: 100% 0;
 }
 .salon {
     grid-row: 16/ 16;
@@ -730,23 +1137,31 @@ h2:hover {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    opacity: 0.9;
+    opacity: 0;
     width: inherit;
     height: 85vh;
     z-index: -99;
     border-radius: 25px;
     grid-row: 20/ 26;
     grid-column: 1 / 15;
+    animation: audi-img linear forwards;
+    animation-timeline: view(35px 15px );
+    animation-range: 15% 45%;
+    translate: 100% 0;
 }
 .audi-svg-back {
     position: relative;
     top: 745px;
     width: 450px;
     transform: rotate(180deg);
-    opacity: 0.4;
     margin-left: -18px;
     grid-row: 13 / 16;
     grid-column:  6/ 10;
+    animation: audi-svg linear forwards;
+    animation-timeline: view(35px 15px );
+    animation-range: 15% 45%;
+    translate: 0 -50%;
+    opacity: 0;
 }
 .back {
     grid-row: 21 / 23 ;
@@ -766,4 +1181,322 @@ h2:hover {
     font-family:Georgia, 'Times New Roman', Times, serif;
     letter-spacing: 10px;
     text-shadow: 0 10px 15px rgba(0, 00, 0, 0.5);
+}
+.audi-img-q8 {
+    background-image: url(../JAva/img/audi_q8_front.avif);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0;
+    width: inherit;
+    height: 85vh;
+    z-index: -99;
+    border-radius: 25px;
+    grid-row: 27/ 32;
+    grid-column: 1 / 15;
+    animation: audi-img linear forwards;
+    animation-timeline: view(35px 15px );
+    animation-range: 15% 45%;
+    translate: 100% 0;
+}
+.q8-front {
+    top: -25px;
+    grid-row: 27/ 30;
+    grid-column: 1 / 15;
+}
+.audi--q8 {
+    grid-row: 6/ 6;
+    grid-column: 3/ 4;
+    font-size: 25px;
+    font-weight: 900;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 10px;
+}
+.audi--q8 + p {
+    width: 350px;
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    grid-row: 5/ 5;
+    grid-column: 1 / 3;
+    margin-left: 75px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    margin-top: 15px ;
+}
+.q8-svg {
+    grid-row: 27/ 29;
+    grid-column:  6/ 10;
+    animation: audi-svg linear forwards;
+    animation-timeline: view(35px 15px );
+    animation-range: 15% 45%;
+    translate: 0 -50%;
+    opacity: 0;
+}
+.q8-salon-img {
+    background-image: url(../JAva/img/audi_q8_salon.avif);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0;
+    width: inherit;
+    height: 85vh;
+    z-index: -99;
+    border-radius: 25px;
+    grid-row: 30/ 43;
+    grid-column: 1 / 15;
+    animation: audi-img linear forwards;
+    animation-timeline: view(35px 15px );
+    animation-range: 15% 45%;
+    translate: 100% 0;
+}
+.after-audi-q8-salon {
+    background-color: white;
+    color: black;
+    grid-row: 35/ 37;
+    grid-column: 10/ 15;
+    width: 500px;
+    opacity: 0;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 25px;  
+    transition: all 0.2s;
+    box-shadow: 0 2px 3px 1px rgb(255, 255, 255);
+    padding: 5px;
+    animation: q8-audi linear forwards;
+    animation-timeline: view(35px 15px );
+    animation-range: 15% 45%;
+    translate: 100% 0;
+}
+@keyframes q8-audi {
+    to {
+        translate: 0 0;
+        opacity: 0.6;
+    }
+}
+.q8-back-img {
+    background-image: url(../JAva/img/audi_q8.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0;
+    width: inherit;
+    height: 85vh;
+    z-index: -99;
+    border-radius: 25px;
+    grid-row: 37/ 50;
+    grid-column: 1 / 15;
+    animation: audi-img linear forwards;
+    animation-timeline: view(35px 15px );
+    animation-range: 15% 45%;
+    translate: 100% 0;
+}
+.q8-svg-back {
+    grid-row: 34/ 36;
+    grid-column:  6/ 10;
+    animation: audi-svg linear forwards;
+    animation-timeline: view(35px 15px );
+    animation-range: 15% 45%;
+    translate: 0 -50%;
+    opacity: 0;
+}
+.q8-back {
+    grid-row: 43/ 45;
+    grid-column: 1/ 3;
+    animation: q8-back linear forwards;
+    animation-timeline: view(35px 15px );
+    animation-range: 10% 30%;
+    translate: -100% 0;
+}
+@keyframes q8-back {
+     to {
+        translate: 0 0;
+        opacity: 0.6;
+     }
+}
+.bmw--logo {
+    grid-row: 49/ 49;
+    grid-column: 7/ 7;
+    box-sizing: border-box;
+    font-size: 35px;
+    font-weight: 900;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 20px;
+    width: 150px;
+    text-shadow: 0 10px 15px rgba(0, 00, 0, 0.5);
+    top: 50px;
+}
+.bmw-img--logo {
+        grid-row: 47 / 48;
+        grid-column: 5/ 8;
+        margin-left: 45px;
+        text-align: center;
+        background-color: transparent;
+        z-index: -99;
+        background-position: center;
+        filter: drop-shadow(0 5px 9px rgba(255, 255, 255, 0.953));
+        animation: bmw-img-logo-animation linear forwards;
+        animation-timeline: view( );
+        animation-range: 25% 45%;
+        scale: 0;
+    }
+@keyframes bmw-img-logo-animation {
+        to {
+            scale: 1;
+        }
+    }
+.bmw-img-front {
+    background-image: url(../JAva/img/bmw_m5_front.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: inherit;
+    height: 85vh;
+    z-index: -99;
+    border-radius: 25px;
+    grid-row: 50/ 59;
+    grid-column: 1 / 15;
+    animation: audi-img linear forwards;
+    animation-timeline: view(35px 15px );
+    animation-range: 15% 45%;
+    translate: 100% 0;
+    opacity: 0;
+}
+.bmw-m5-logo {
+    grid-row: 51/ 51;
+    grid-column: 2/ 4;
+    justify-self: center;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1) ;
+    padding: 5px;
+    width: 300px;
+    border-radius: 15px;
+    font-size: 30px;
+    font-weight: 900;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 10px;
+    text-shadow: 0 10px 15px rgba(0, 00, 0, 0.5);
+}
+.bmw-m5 {
+    grid-row: 6/ 6;
+    grid-column: 3/ 4;
+    font-size: 25px;
+    font-weight: 900;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 10px;
+}
+.bmw-m5+p {
+    width: 350px;
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    grid-row: 5/ 6;
+    grid-column: 1 / 3;
+    margin-left: 75px;
+    line-height: 1.7;
+    letter-spacing: 1px;
+    margin-top: 15px ;
+}
+.after-bmw {
+    grid-row: 54/ 54;
+    grid-column: 1/ 4;
+    overflow: hidden;
+    background-color: black;
+    color: white;
+    width: 550px;
+    padding: 5px;
+    opacity: 0;
+    border-end-end-radius: 50px;
+    border-top-right-radius: 50px;
+    transition: all 0.2s;
+    box-shadow: 0 2px 3px 1px rgba(0, 0, 0, 0.5);
+    animation: after-bmw linear forwards;
+    animation-timeline: view(35px 15px );
+    animation-range: 15% 45%;
+    translate: -150% 0;
+ }
+ .m5 {
+    background-color: white;
+    color: black;
+ }
+ @keyframes after-bmw {
+    to {
+        opacity: 0.6;
+        translate: 0 0;
+    }
+}
+.bmw-img-salon {
+    background-image: url(../JAva/img/bmw_m5_salon.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: inherit;
+    height: 85vh;
+    z-index: -99;
+    border-radius: 25px;
+    grid-row: 58/ 65;
+    grid-column: 1 / 15;
+    animation: audi-img linear forwards;
+    animation-timeline: view(35px 15px );
+    animation-range: 15% 45%;
+    translate: 100% 0;
+    opacity: 0;
+}
+.m5-salon {
+    grid-row: 62 /62;
+    grid-column:1 /4 ;
+    animation: m5-salon linear forwards;
+    animation-timeline: view(35px 15px );
+    animation-range: 15% 30%;
+    translate: -100% 0;
+    opacity: 0;
+}
+@keyframes m5-salon{
+     to {
+        translate: 0 0;
+        opacity: 0.6;
+     }
+}
+.bmw-m5-svg {
+    grid-row: 52/ 53;
+    grid-column:  6/ 10;
+    animation: audi-svg linear forwards;
+    animation-timeline: view(35px 15px );
+    animation-range: 15% 45%;
+    translate: 0 -50%;
+    opacity: 0;
+}
+.bmw-m5-svg-back {
+    grid-row: 59/ 60;
+    grid-column:  6/ 10;
+    animation: audi-svg linear forwards;
+    animation-timeline: view(35px 15px );
+    animation-range: 15% 45%;
+    translate: 0 -50%;
+    opacity: 0
+}
+.bmw-img-back {
+    background-image: url(../JAva/img/bmw_m5_back.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: inherit;
+    height: 85vh;
+    z-index: -99;
+    border-radius: 25px;
+    grid-row: 63/ 74;
+    grid-column: 1 / 15;
+    animation: audi-img linear forwards;
+    animation-timeline: view(35px 15px );
+    animation-range: 15% 45%;
+    translate: 100% 0;
+    opacity: 0;
+}
+.m5-back {
+    grid-row: 68 /68;
+    grid-column:1 /4 ;
+    animation: m5-salon linear forwards;
+    animation-timeline: view(35px 15px );
+    animation-range: 15% 30%;
+    translate: -100% 0;
+    opacity: 0;
 }

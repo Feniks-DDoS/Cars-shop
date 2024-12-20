@@ -26,7 +26,7 @@
           <a href="#">&cudarrr;Cars</a>
           <ul>
             <li>
-              <a href="#">BMW</a>
+              <a href="#bmw">BMW</a>
             </li>
             <li>
               <a href="#audi">Audi</a>
@@ -73,6 +73,29 @@
     </nav>
   </header>
   <main class="main">
+    <section class="middle slider">
+      <div class="slides">
+      <input type="radio" name="r" id="r1" checked>
+      <input type="radio" name="r" id="r2">
+      <input type="radio" name="r" id="r3">
+      <input type="radio" name="r" id="r4">
+ 
+
+      <div class="slide s1"><img src="./img/audi_a4_back.jpg" alt=""></div>
+      <div class="slide"><img src="./img/audi_a4_front.jpg" alt=""></div>
+      <div class="slide"><img src="./img/audi_q8.jpg" alt=""></div>
+      <div class="slide"><img src="./img/bmw_m5_front.webp" alt=""></div>
+      </div>
+
+      <div class="navigation">
+            <label for="r1" class="bar"></label>
+            <label for="r2" class="bar"></label>
+            <label for="r3" class="bar"></label>
+            <label for="r4" class="bar"></label>
+          
+      </div>
+      </section>
+    <!--
     <div class="nav-search">
       <form action="">
         <label class="search" for="search">Search on the Web-site</label>
@@ -80,6 +103,7 @@
         <button type="button" class="btn-search">Search</button>
       </form>
     </div>
+  -->
     <h2 >About us</h2>
     <section class="conteiner">
         <aricle class="about us-support">
@@ -335,12 +359,12 @@
           </svg>
       </button>
       <section class="main--germany--car">
-        <h2 class="germany--cars--text">Germany cars</h2>
-        <h3 class="audi--logo">Audi</h3>
+        <h2 class="germany--cars--text" id="audi">Germany cars</h2>
+        <h3 class="audi--logo" >Audi</h3>
         <img class="audi-img--back" src="./img/audi.logo.png" alt="audi-cars" loading="lazy" width="500px"  >
         <h4 class="audi--a4--logo">Audi A4</h4>
         <div class="after-audi">
-          <h5 id="audi" class="audi--a4">Dynamic and sleek design</h5>
+          <h5  class="audi--a4">Dynamic and sleek design</h5>
           <p>
             The best-selling Audi A4 represents the premium mid-range in Europe, but with sporty polished details, it is now more dynamic and sophisticated.
           </p>
@@ -416,6 +440,162 @@
                  </svg>
           <article class="audi-img-2"></article>
           <h4 class="audi--q8--logo">Audi Q8</h4>
+          <article class="audi-img-q8"></article>
+          <div class="after-audi q8-front">
+            <h5 class="audi--q8">Reimagined design</h5>
+            <p>
+              From front to back, the Audi Q8 e-tron features bold styling—including the evolutionary Audi rings in two-dimensional design, 
+              Singleframe® projection light grille, as well as streamlined bumpers and distinctive taillights.
+            </p>
+          </div>
+          <svg  class="audi-svg q8-svg"
+          xmlns:dc="http://purl.org/dc/elements/1.1/"
+          xmlns:cc="http://creativecommons.org/ns#"
+          xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns="http://www.w3.org/2000/svg"
+          version="1.1"
+          width="20%"
+          viewBox="0 0 14 14"
+          id="svg2">
+         <metadata
+            id="metadata8">
+         </metadata>
+         <defs
+            id="defs6" />
+         <rect
+            width="14"
+            height="14"
+            x="0"
+            y="0"
+            id="canvas"
+            style="fill:none;stroke:none;visibility:hidden" />
+         <path
+            d="M 14,5 6.9999999,0.99999997 0,5 0,7.0000002 1.5,6.35 l 1e-7,7.65 1.4999998,0 0,-8.2999998 L 6.9999999,4 11,5.7000002 11,14 l 1.5,0 0,-7.65 1.5,0.6500002 z"
+            id="basic-hut" style="fill:#000000;fill-opacity:1;stroke:none" />
+                 </svg>
+                 <article class="audi-img-q8 q8-salon-img"></article>
+                <div class="after-audi-q8-salon">
+                 <h5 class="audi--q8">Luxurious front seats</h5>
+                 <p>
+                  Standard on Prestige, the full leather interior and ventilated,
+                   18-way adjustable individual contour front seats with massage function are wrapped in Valcona/Milano leather and offer maximum comfort
+                 </p>
+                </div>
+                <svg  class="audi-svg q8-svg-back"
+                xmlns:dc="http://purl.org/dc/elements/1.1/"
+                xmlns:cc="http://creativecommons.org/ns#"
+                xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns="http://www.w3.org/2000/svg"
+                version="1.1"
+                width="20%"
+                viewBox="0 0 14 14"
+                id="svg2">
+               <metadata
+                  id="metadata8">
+               </metadata>
+               <defs
+                  id="defs6" />
+               <rect
+                  width="14"
+                  height="14"
+                  x="0"
+                  y="0"
+                  id="canvas"
+                  style="fill:none;stroke:none;visibility:hidden" />
+               <path
+                  d="M 14,5 6.9999999,0.99999997 0,5 0,7.0000002 1.5,6.35 l 1e-7,7.65 1.4999998,0 0,-8.2999998 L 6.9999999,4 11,5.7000002 11,14 l 1.5,0 0,-7.65 1.5,0.6500002 z"
+                  id="basic-hut" style="fill:#000000;fill-opacity:1;stroke:none" />
+                       </svg>
+                 <article class="audi-img-q8 q8-back-img"></article>
+                 <div class="after-audi q8-back">
+                  <h5 class="audi--q8">Go further—faster</h5>
+                  <p>
+                    The 114 kWh battery on the Audi Q8 e-tron has a revised cell structure, helping 
+                    it obtain an EPA-estimated range of up to 285 miles. Combined with an increased DC 
+                    charging speed of 170 kW, you can get on the road faster to go further.
+                  </p>
+                 </div>
+                 <h3 class="bmw--logo" id="bmw">BMW</h3>
+                 <img class="bmw-img--logo" src="./img/bmw-logo.png" alt="bmw-cars" loading="lazy" width="500px"  >
+                 <h4 class="bmw-m5-logo">M5</h4>
+                 <article class="bmw-img-front"></article>
+                 <div class="after-bmw m5">
+                  <h5 class="bmw-m5"> Enjoy the pure driving pleasure of electric drive</h5>
+                  <p>
+                    The BMW M5 sedan with plug-in hybrid technology can only drive electrically. With zero-emission driving that emits no emissions,
+                     it has a cruising range that covers daily travel such as commuting and shopping, and excellent quietness. 
+                  </p>
+                 </div>
+                 <svg  class="audi-svg bmw-m5-svg"
+                xmlns:dc="http://purl.org/dc/elements/1.1/"
+                xmlns:cc="http://creativecommons.org/ns#"
+                xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns="http://www.w3.org/2000/svg"
+                version="1.1"
+                width="20%"
+                viewBox="0 0 14 14"
+                id="svg2">
+               <metadata
+                  id="metadata8">
+               </metadata>
+               <defs
+                  id="defs6" />
+               <rect
+                  width="14"
+                  height="14"
+                  x="0"
+                  y="0"
+                  id="canvas"
+                  style="fill:none;stroke:none;visibility:hidden" />
+               <path
+                  d="M 14,5 6.9999999,0.99999997 0,5 0,7.0000002 1.5,6.35 l 1e-7,7.65 1.4999998,0 0,-8.2999998 L 6.9999999,4 11,5.7000002 11,14 l 1.5,0 0,-7.65 1.5,0.6500002 z"
+                  id="basic-hut" style="fill:#000000;fill-opacity:1;stroke:none" />
+                       </svg>
+                 <article class="bmw-img-salon"></article>
+                 <div class="after-audi m5-salon">
+                  <h5 class="bmw-m5"> Into the world of ecstatic running</h5>
+                  <p>
+                    Ambient light with modes exclusive to the M model. The emblematic red and blue glow of the BMW M world foreshadows the beginning of the unknown exaltation. 
+                  </p>
+                 </div>
+                 <svg  class="audi-svg bmw-m5-svg-back"
+                 xmlns:dc="http://purl.org/dc/elements/1.1/"
+                 xmlns:cc="http://creativecommons.org/ns#"
+                 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                 xmlns:svg="http://www.w3.org/2000/svg"
+                 xmlns="http://www.w3.org/2000/svg"
+                 version="1.1"
+                 width="20%"
+                 viewBox="0 0 14 14"
+                 id="svg2">
+                <metadata
+                   id="metadata8">
+                </metadata>
+                <defs
+                   id="defs6" />
+                <rect
+                   width="14"
+                   height="14"
+                   x="0"
+                   y="0"
+                   id="canvas"
+                   style="fill:none;stroke:none;visibility:hidden" />
+                <path
+                   d="M 14,5 6.9999999,0.99999997 0,5 0,7.0000002 1.5,6.35 l 1e-7,7.65 1.4999998,0 0,-8.2999998 L 6.9999999,4 11,5.7000002 11,14 l 1.5,0 0,-7.65 1.5,0.6500002 z"
+                   id="basic-hut" style="fill:#000000;fill-opacity:1;stroke:none" />
+                        </svg>
+                        <article class="bmw-img-back"></article>
+                        <div class="after-audi m5-back">
+                          <h5 class="bmw-m5"> BMW Financial Services</h5>
+                          <p>
+                            In order for our customers to realize a richer car life with BMW.
+                             BMW Financial Services offers attractive plans that combine a variety of options, 
+                            including loan and lease agreements, insurance, vehicle-related services and mobility services.
+                          </p>
+                        </div>
       </section>
 </main>
 </body>
