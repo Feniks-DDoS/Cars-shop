@@ -1,0 +1,634 @@
+@font-face {
+    font-family: 'DM Sans';
+    src: url('DMSans-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter 28pt';
+    src: url('Inter28pt-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url("fonts/Montserrat-Bold.woff2") format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url("fonts/Montserrat-Medium.woff2") format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url("fonts/Montserrat-SemiBold.woff2") format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Righteous';
+    src: url('Righteous-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url("fonts/Montserrat-Regular.woff2") format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('RobotoCondensed-BoldItalic.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+/**
+  Нормализация блочной модели
+ */
+ *,
+ ::before,
+ ::after {
+   box-sizing: border-box;
+ }
+ 
+ /**
+   Убираем внутренние отступы слева тегам списков,
+   у которых есть атрибут class
+  */
+ :where(ul, ol):where([class]) {
+   padding-left: 0;
+ }
+ 
+ /**
+   Убираем внешние отступы body и двум другим тегам,
+   у которых есть атрибут class
+  */
+ body,
+ :where(blockquote, figure):where([class]) {
+   margin: 0;
+ }
+ 
+ /**
+   Убираем внешние отступы вертикали нужным тегам,
+   у которых есть атрибут class
+  */
+ :where(
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6,
+   p,
+   ul,
+   ol,
+   dl
+ ):where([class]) {
+   margin-block: 0;
+ }
+ 
+ :where(dd[class]) {
+   margin-left: 0;
+ }
+ 
+ :where(fieldset[class]) {
+   margin-left: 0;
+   padding: 0;
+   border: none;
+ }
+ 
+ /**
+   Убираем стандартный маркер маркированному списку,
+   у которого есть атрибут class
+  */
+ :where(ul[class]) {
+   list-style: none;
+ }
+ 
+ :where(address[class]) {
+   font-style: normal;
+ }
+ 
+ /**
+   Обнуляем вертикальные внешние отступы параграфа,
+   объявляем локальную переменную для внешнего отступа вниз,
+   чтобы избежать взаимодействие с более сложным селектором
+  */
+ p {
+   --paragraphMarginBottom: 24px;
+ 
+   margin-block: 0;
+ }
+ 
+ /**
+   Внешний отступ вниз для параграфа без атрибута class,
+   который расположен не последним среди своих соседних элементов
+  */
+ p:where(:not([class]):not(:last-child)) {
+   margin-bottom: var(--paragraphMarginBottom);
+ }
+ 
+ 
+ /**
+   Упрощаем работу с изображениями и видео
+  */
+ img,
+ video {
+   display: block;
+   max-width: 100%;
+   height: auto;
+ }
+ 
+ /**
+   Наследуем свойства шрифт для полей ввода
+  */
+ input,
+ textarea,
+ select,
+ button {
+   font: inherit;
+ }
+ 
+ html {
+   /**
+     Пригодится в большинстве ситуаций
+     (когда, например, нужно будет "прижать" футер к низу сайта)
+    */
+   height: 100%;
+   /**
+     Убираем скачок интерфейса по горизонтали
+     при появлении / исчезновении скроллбара
+    */
+   scrollbar-gutter: stable;
+ }
+ 
+ /**
+   Плавный скролл
+  */
+ html,
+ :has(:target) {
+   scroll-behavior: smooth;
+ }
+ 
+ body {
+   /**
+     Пригодится в большинстве ситуаций
+     (когда, например, нужно будет "прижать" футер к низу сайта)
+    */
+   min-height: 100%;
+   /**
+     Унифицированный интерлиньяж
+    */
+   line-height: 1.5;
+ }
+ 
+ /**
+   Нормализация высоты элемента ссылки при его инспектировании в DevTools
+  */
+ a:where([class]) {
+   display: inline-flex;
+ }
+ 
+ /**
+   Курсор-рука при наведении на элемент
+  */
+ button,
+ label {
+   cursor: pointer;
+ }
+ 
+ /**
+   Приводим к единому цвету svg-элементы
+  */
+ [fill] { fill: currentColor }
+ [stroke] { stroke: currentColor }
+ 
+ /**
+   Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+  */
+ svg * {
+   transition-property: fill, stroke;
+ }
+ 
+ /**
+   Приведение рамок таблиц в классический 'collapse' вид
+  */
+ :where(table) {
+   border-collapse: collapse;
+   border-color: currentColor;
+ }
+ 
+ /**
+   Удаляем все анимации и переходы для людей,
+   которые предпочитают их не использовать
+  */
+ @media (prefers-reduced-motion: reduce) {
+   *,
+   ::before,
+   ::after {
+     animation-duration: 0.01ms !important;
+     animation-iteration-count: 1 !important;
+     transition-duration: 0.01ms !important;
+     scroll-behavior: auto !important;
+   }
+ } 
+
+
+ :root {
+      --color-dark:#000000;
+      --color-light:#FFFFFF;
+      --color-dark-grey:#A6A6A6;
+      --color-light-gray:#FFFEFE;
+      --color-blue:#0076E0;
+
+
+
+      --border-radius: 40px;
+      --border-radius-services: 50px;
+      --border-radius-login: 10px;
+    
+      --input-height: 65px;
+      --button-height: 60px;
+
+
+      --conteiner-width: 1920px;
+      --conteiner-padding-x: 15px;
+
+      --font-family-base: "Montserrat", "sans-serif";
+      --font-family-accent: "Righteous", "sans-serif";
+      
+
+      --transition-duration: 0.2s;
+ }
+
+ body {
+    font-family: var(--font-family-base);
+    color: var(--color-dark);
+    font-weight: 400;
+    font-size: 15px;
+    min-height: 6000px;
+    line-height: normal;
+    background-color: var(--color-light);
+    background-image: url(./images/body_background_img.png);
+    overflow-x: hidden;
+ }
+
+ .conteiner {
+    max-width: calc(var(--conteiner-width) + var(--conteiner-padding-x) * 2);
+    margin-inline: auto;
+    padding-inline: var(--conteiner-padding-x);
+ }
+ h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    /* text-transform: uppercase;  */
+ }
+
+ a {
+    color: var(--color-light);
+    list-style: none;
+    text-decoration: none;
+ }
+
+ .btn {
+    text-wrap: nowrap;
+
+    
+    color: var(--color-dark);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600; 
+
+    width: 10rem;
+    height: 3rem;
+    padding: 20px 30px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor:auto;
+ }
+
+ .btn:hover {
+   opacity: 0.8;
+ }
+ .btn:active {
+    opacity: 0.4;
+ }
+ .header {
+    display: flex;
+    justify-content: space-around;
+    align-items: top;
+    column-gap: 20px;
+           
+    background-image: url(./icons/header_background.svg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    position: relative;
+    top: -1rem;
+    min-height: 46rem;
+    padding-inline: 15px;
+ }
+ .header-logo {
+    position: relative;
+    /* left: 5rem; */
+    max-height: max-content;
+    transition: 0.2s;
+
+ }
+.header-logo:hover {
+   filter:drop-shadow(0 4px 8px var(--color-light)); 
+}
+ .header-menu {
+    position: relative;
+    right: -5rem;
+
+    max-height: max-content;
+    display: inline-flex;
+    justify-content: end;
+ }
+ .header-menu-list {
+    display: flex;
+    flex-direction: row;
+ }
+ .header-menu-link {
+    color: var(--color-light);
+
+    position: relative;
+    padding-top: 30px;
+    margin-inline: 15px;
+
+    font-size: 20px;
+    font-weight: 700;
+    font-style: normal;
+    transition: var(--transition-duration);
+ }
+ .header-menu-link.is-current::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    opacity: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition: all 0.2s;
+ }
+ .header-menu-link.is-current:hover::after {
+    opacity: 1;
+    width: 100%
+ }
+ .header-menu-link:hover {
+    filter:drop-shadow(0 3px 5px rgb(252, 252, 252));
+    transform: scale(1.1);
+ }
+ .header img {
+   position: absolute;
+ }
+ .header svg {
+    color: white;
+    box-shadow: var(--color-dark);
+ }
+ .header-img-decoration {
+   display: flex;
+   justify-content: end;
+   align-items: center;
+ }
+ .header-img-decoration-1 {
+    position: relative;
+    right: 250px;
+    top: 150px;
+    
+ }
+ .header-img-decoration-2 {
+    position: relative;
+    right: 356px;
+    top: 75px;
+ }
+ .header-text-decoration {
+    position: absolute;
+    top: 15rem;
+    left: 10rem;
+
+    flex-direction: column;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: start;
+
+    color: var(--color-light);
+ }
+ .header-text-1 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: start;
+
+    max-width: 30rem;
+    max-height: 20rem;
+ }
+ .header-text-2 {
+    font-size: 33;
+    font-style: normal;
+    line-height: normal;
+    font-weight: 500;
+
+    position: absolute;
+    top: 12rem;
+
+    color: var(--color-light-gray);
+ }
+.header-start-btn {
+    border-radius: var(--border-radius);
+    border:none;
+
+    background: #FFD4D4;
+    box-shadow: 0px 11px 36px 0px rgba(0, 0, 0, 0.14);
+
+    position: relative;
+    top: 3rem;
+    left: -8rem;
+
+}
+
+.header-decoration-sponsor {
+    position: absolute;
+    top: 42rem;
+
+    display: flex;
+    flex-direction: row-reverse;
+    text-align: center;
+    align-items: center;
+    column-gap: 10px;
+
+    width: 50rem;
+    height: 5rem;
+
+
+    padding: 0 10px;
+
+    border-radius: 10px;
+    border:none;
+    box-shadow: 0px 3px 5px 4px rgba(0, 0, 0, 0.5);
+
+    background-color: var(--color-light);
+
+    transition:var(--transition-duration);
+}
+.header-decoration-sponsor:hover {
+    box-shadow:  0 4px 5px rgba(0, 0, 0, 0.5);
+}
+.header-text-3 {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+
+    width: 598px;
+    height: 28px;
+
+    color: var(--color-light);
+
+    position: absolute;
+    top: -3rem;
+    right: 7rem;
+ }
+.header_sponsor_1 {
+     width: 287px;
+     height: 70px;
+     background-image: url(./images/header_sponsor_1.png);
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;    
+}
+.header_sponsor_2 {
+    width: 138px;
+    height: 70px;
+    background-image: url(./images/header_sponsor_2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;    
+}
+.header_sponsor_3 {
+    width: 160px;
+    height: 70px;
+    border-radius: 50px;
+    background-image: url(./images/header_sponsor_3.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;    
+}
+.header_sponsor_4 {
+    width: 167px;
+    height: 70px;
+    background-image: url(./images/header_sponsor_4.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;    
+}
+
+@media (max-width:1399px) {
+    .header-img-decoration-1 {
+        position: relative;
+        right: 150px;
+        top: 120px;
+        
+     }
+     .header-img-decoration-2 {
+        position: relative;
+        right: 260px;
+        top: 50px;
+     }
+}
+@media (max-width:1199px) {
+    .header-img-decoration-1 {
+        position: relative;
+        right: 75px;
+        top: 170px;
+        max-width: 350px;
+        max-height: 380px;
+        
+     }
+     .header-img-decoration-2 {
+        position: relative;
+        right: 150px;
+        top: 85px;
+        max-width: 200px;
+        max-height: 250px;
+     }
+     .header-text-decoration {
+        position: absolute;
+        top: 10rem;
+        left: 4rem;
+    
+        flex-direction: column;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: start;
+    
+        color: var(--color-light);
+     }
+     .header-text-1 {
+        font-size: 40px;
+    
+        max-width: 30rem;
+        max-height: 20rem;
+     }
+     .header-text-2 {
+        font-size: 25px;
+        text-wrap: nowrap;
+
+        position: absolute;
+        top: 10rem;
+        left: 0rem;
+     }
+     .header-start-btn {
+        border-radius: var(--border-radius);
+        border:none;
+    
+        background: #FFD4D4;
+        box-shadow: 0px 11px 36px 0px rgba(0, 0, 0, 0.14);
+    
+        position: relative;
+        top: 5rem;
+        left: -6rem;
+    
+     }
+     .header-decoration-sponsor {
+        position: absolute;
+        top: 35rem;
+    
+        width: 50rem;
+        height: 5rem;
+    }
+    .header {
+        min-height: 40rem;
+    }
+    .header-menu-link {
+        font-size: 25px;
+    
+     }
+}
