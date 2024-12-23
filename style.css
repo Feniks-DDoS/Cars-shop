@@ -889,6 +889,59 @@
         min-height: 50rem;
     }
 }
+@media (max-width:431px) {
+
+     .header-text-decoration {
+        position: absolute;
+        top: 16rem;
+        left: 3rem;
+    
+        flex-direction: column;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: start;
+    
+        color: var(--color-light);
+     }
+     .header-text-1 {
+        font-size: 40px;
+          
+        text-shadow: 0 4px 5px var(--color-dark);
+
+        z-index: 2;
+        position: relative;
+        top: -5rem;
+        max-width: 30rem;
+        max-height: 20rem;
+     }
+     .header-text-2 {
+        font-size: 25px;
+        text-wrap: wrap;
+       
+        text-shadow: 0 4px 5px var(--color-dark);
+
+        z-index: 2;
+
+        position: absolute;
+        top: 8rem;
+        left: -1rem;
+     }
+     .header-start-btn {
+        border-radius: var(--border-radius);
+        border:none;
+        
+        z-index: 2;
+
+        background: #FFD4D4;
+        box-shadow: 0px 11px 36px 0px rgba(0, 0, 0, 0.14);
+    
+        position: relative;
+        top: 5rem;
+        left: -1rem;
+    
+     }
+}
 @media (max-width:399px) {
     .header-logo {
         max-height: 40px;
