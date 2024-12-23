@@ -952,6 +952,58 @@
     
      }
 }
+@media (max-width: 850px) {
+    .header-decoration-sponsor {
+        position: absolute;
+        top: 30rem;
+    
+        width: 40rem;
+        height: 5rem;
+    }
+    .header-text-3 { 
+        text-wrap: wrap;
+        left: 25%;
+        top: -80px;
+        width: 20rem;
+        height: 28px;
+    
+     }
+
+     .banner-contact {
+        min-width: 100vw;
+        max-height: 8rem;
+    }
+    .facebook {
+        position: inherit;
+        left: 3.5rem;
+        top: -6rem;
+    }
+    .instagram {
+        position: inherit;
+        top: -8rem;
+        left: 2.5rem;
+    }
+    .linkedin {
+        position: inherit;
+        left: 1.5rem;
+        top: -5rem;
+    }
+    .twitter {
+        position: inherit;
+        top: -6rem;
+        left: 0.3rem;
+    }
+    .whatsapp {
+        position: inherit;
+        left: -1rem;
+        top: -5rem;
+    }
+    .youtube {
+        position: inherit;
+        top: -8rem;
+        right: 2.2rem;
+    } 
+}
 @media (max-width:799px) {
     
     .banner-big-logo.phone {
@@ -1216,6 +1268,12 @@
     }
 }
 @media (max-width:431px) {
+     
+    .banner-big-logo.phone {
+        position: relative;
+        top: -37rem;
+    }
+    
 
     .banner-big-logo {
         position: relative;
@@ -1232,13 +1290,13 @@
     }
     .facebook {
         position: inherit;
-        left: 2.3rem;
+        left: 1.8rem;
         top: -8rem;
     }
     .instagram {
         position: inherit;
         top: -10rem;
-        left: 1.7rem;
+        left: 1.4rem;
     }
     .linkedin {
         position: inherit;
