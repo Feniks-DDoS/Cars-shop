@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>mopwna clink</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="body">
     <header class="header">
        <a href="/" class="header-logo">
         <svg xmlns="http://www.w3.org/2000/svg" width="411" height="125" viewBox="0 0 405 133" fill="none">
@@ -30,23 +30,10 @@
                 <a href="/" class="header-menu-link">Services</a>
             </li>
             <li class="header-menu-items">
-                <a href="/" class="header-menu-link">About us</a>
+                <a href="#about-us" class="header-menu-link">About us</a>
             </li>
             <li class="header-menu-items">
                 <a href="/" class="header-menu-link">Contact</a>
-            </li>
-            <li class="header-menu-items-burger">
-                <button class="header-burger-btn btn" title="Open menu">
-                <span class="visually-hidden">Open menu</span>
-                <svg class="header-burger-svg" width="100px" height="50px" fill="#000000"  viewBox="0 0 32 32" enable-background="new 0 0 32 32" id="Glyph" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <path d="M29,16c0,1.104-0.896,2-2,2H11c-1.104,0-2-0.896-2-2s0.896-2,2-2h16C28.104,14,29,14.896,29,16z" id="XMLID_352_"/>
-                    <path d="M29,6c0,1.104-0.896,2-2,2H11C9.896,8,9,7.104,9,6s0.896-2,2-2h16C28.104,4,29,4.896,29,6z" id="XMLID_354_"/>
-                    <path d="M29,26c0,1.104-0.896,2-2,2H11c-1.104,0-2-0.896-2-2s0.896-2,2-2h16C28.104,24,29,24.896,29,26z" id="XMLID_356_"/>
-                    <path d="M3,6c0,1.103,0.897,2,2,2s2-0.897,2-2S6.103,4,5,4S3,4.897,3,6z" id="XMLID_358_"/>
-                    <path d="M3,16c0,1.103,0.897,2,2,2s2-0.897,2-2s-0.897-2-2-2S3,14.897,3,16z" id="XMLID_360_"/>
-                    <path d="M3,26c0,1.103,0.897,2,2,2s2-0.897,2-2s-0.897-2-2-2S3,24.897,3,26z" id="XMLID_362_"/>
-                </svg>
-                </button>
             </li>
         </ul>
        </nav>
@@ -281,7 +268,7 @@
                           </svg>
                       </div>
                 </div>
-                <div class="main-decoration-logo-text-bottom">
+                <div class="main-decoration-logo-text-bottom" id="about-us">
                     <h4>About Us</h4>
                 </div>
                 <div class="decoration-middle-text-bottom">
@@ -302,6 +289,136 @@
             </li>
         </ul>
         </section>
+        <section class="level-up">
+            <div class="level-up-all-text">
+            <h2 class="level-up-logo">Want your <br>
+                Business <br> 
+                to <span>level up?</span></h2>
+                <h2 class="level-up-logo-phone">Want your Business to 
+                    <span>level up?</span></h2>
+                <article class="level-up-main-text">
+                    <h3>Get Started now</h3>
+                    <br>
+                    <p>Improve Performance <br>
+                        and Growth your <br>
+                        Website</p>
+                    <p>Improve Performance and Growth your Website</p>
+                </article>
+            </div>
+                <article class="level-up-img">
+                    <img src="./images/level-up-img.png" 
+                    alt="level-up-img" 
+                    loading="lazy"
+                    />
+                </article>
+                <form action="">
+                <article class="level-up-message" >
+                    <div class="level-up-all-login">
+                    <label for="Email" 
+                    class="level-up-message-email">Email</label>
+                    <input 
+                    type="email" 
+                    name="user-email" 
+                    placeholder="Enter your email" 
+                    id="Email" 
+                    class="level-up-email-input" 
+                    inputmode="email" 
+                    maxlength="30" 
+                    minlength="5"
+                    reguired
+                    />
+                    </div>
+                    <div class="level-up-all-textarea">
+                    <label for="Talk-to-us" class="level-up-talk-to-us">Message</label>
+                    <textarea 
+                    name="user-text" 
+                    class="level-up-textarea" 
+                    id="Talk-to-us" 
+                    placeholder="Talk to us"
+                    inputmode="text"
+                    maxlength="100"
+                    minlength="10"
+                    ></textarea>
+                    </div>
+                    <div class="level-up-all-btn">
+                    <button type="submit" class="level-up-btn btn">Level up</button>
+                    <p>or<a href="/">Book a free strategy chat</a>
+                    </div>
+                </article>
+            </form>
+        </section>
     </main>
+    <footer class="footer">
+        <div class="footer-contact">
+            <ul class="footer-contact-list">
+                <li class="footer-contact-items">
+                   <img src="./images/footer_LinkedIn.png" 
+                   alt="footer contact linkedin"
+                   loading="lazy"
+                   />
+                </li>
+                <li class="footer-contact-items">
+                    <img src="./images/footer_Facebook.png" 
+                    alt="footer contact facebook"
+                    loading="lazy"
+                    />
+                 </li>
+                 <li class="footer-contact-items">
+                    <img src="./images/footer_Instagram.png" 
+                    alt="footer contact instagram"
+                    loading="lazy"
+                    />
+                 </li>
+                 <li class="footer-contact-items">
+                    <img src="./images/footer_Twitter.png" 
+                    alt="footer contact twwitter"
+                    loading="lazy"
+                    />
+                 </li>
+            </ul>
+        </div>
+        <p>© 2022 Ir Digitals. Copyright and rights reserved</p>
+        <div class="footer-list">
+            <ul class="footer-list-list">
+                <li class="footer-list-items">
+                    <a href="/">Help centre</a>
+                </li>
+                <li class="footer-list-items">
+                    <a href="/">Account information</a>
+                </li>
+                <li class="footer-list-items">
+                    <a href="/">About</a>
+                </li>
+                <li class="footer-list-items">
+                    <a href="/">Contact us</a>
+                </li>
+                <li class="footer-list-items">
+                    <a href="/">Talk to support</a>
+                </li>
+                <li class="footer-list-items">
+                    <a href="/">Support docs</a>
+                </li>
+                <li class="footer-list-items">
+                    <a href="/">System status</a>
+                </li>
+                <li class="footer-list-items">
+                    <a href="/">Covid responde</a>
+                </li>
+                <li class="footer-list-items">
+                    <a href="/">Update</a>
+                </li>
+                <li class="footer-list-items">
+                    <a href="/">Security</a>
+                </li>
+                <li class="footer-list-items">
+                    <a href="/">Beta test</a>
+                </li>
+                <li class="footer-list-items">
+                    <a href="/">Pricing product</a>
+                </li>
+            </ul>
+        </div>
+        <p>Terms and Condtions &#x2022; Privacy Policy</p>
+    </footer>
 </body>
 </html>
