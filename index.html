@@ -90,37 +90,24 @@
                 <h2 class="main__slider-title">Mobil terbaru</h2>
                 <a href="#" class="main__slider-link">Lihat Koleksi Mobil</a>
                 </div>
-            <div class="slider-container">
-                <div class="slides">
-                <input type="radio" name="slider" id="slide1" checked>
-                <input type="radio" name="slider" id="slide2">
-                <input type="radio" name="slider" id="slide3">
-                <input type="radio" name="slider" id="slide4">
-                <input type="radio" name="slider" id="slide5">
-              
-                  <div class="slide s1"><img src="images/hero-image.png" alt="Toyota Corolla Cross Hybrid GR Sport"></div>
-                  <div class="slide"><img src="images/suzuki-grand.png" alt="Suzuki Grand Vitara"></div>
-                  <div class="slide "><img src="images/suzuki-s-presso.png" alt="Suzuki S-Presso"></div>
-                  <div class="slide "><img src="images/subaru-wrx.png" alt="Subaru WRX"></div>
-                  <div class="slide "><img src="images/chery-omoda.png" alt="Chery Omoda 5"></div>
-                </div>
-              
-                <div class="slider-navigation">
-                    <button class="button button-slider is-current">
-                  <label for="slide1">Toyota Corolla Cross Hybrid GR Sport</label>
-                </button>
-                <button class="button button-slider">
-                  <label for="slide2">Suzuki Grand Vitara</label>
-                </button>
-                  <button class="button button-slider">
-                  <label for="slide3">Suzuki S-Presso</label>
-                </button>
-                  <button class="button button-slider">
-                  <label for="slide4">Subaru WRX</label>
-                </button>
-                  <button class="button button-slider">
-                  <label for="slide5">Chery Omoda 5</label>
-                </button>
+                <div class="swiper-container">
+                    <div class="swiper">
+                     
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide"><img src="images/hero-image.png" alt="Toyota Corolla Cross Hybrid GR Sport" loading="lazy" width="706" height="357"></div>
+                          <div class="swiper-slide"><img src="images/suzuki-grand.png" alt="Suzuki Grand Vitara" loading="lazy" width="706" height="357"></div>
+                          <div class="swiper-slide"><img src="images/suzuki-s-presso.png" alt="Suzuki S-Presso" loading="lazy" width="706" height="357"></div>
+                          <div class="swiper-slide"><img src="images/subaru-wrx.png" alt="Subaru WRX" loading="lazy" width="706" height="357"></div>
+                          <div class="swiper-slide"><img src="images/chery-omoda.png" alt="Chery Omoda 5" loading="lazy" width="706" height="357"></div>
+                        </div>
+                        <div class="custom-buttons">
+                        <div class="swiper-pagination go-to-slide button" data-slide="1">Toyota Corolla Cross Hybrid GR Sport</div>
+                        <div class="swiper-pagination go-to-slide button" data-slide="2">Suzuki Grand Vitara</div>
+                        <div class="swiper-pagination go-to-slide button" data-slide="3">Suzuki S-Presso</div>
+                        <div class="swiper-pagination go-to-slide button" data-slide="4">Subaru WRX</div>
+                        <div class="swiper-pagination go-to-slide button" data-slide="5">Chery Omoda 5</div>
+                        </div>
+                      </div>
                 </div>
             </div>
         <div class="main__cars-logo--contaier">
@@ -368,5 +355,7 @@
             </div>
         </section>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
