@@ -310,7 +310,7 @@ a {
 } 
 .swiper-container {
     position: relative;
-    left: 18rem;
+    left: 23rem;
 }
 .swiper {
   display: flex;
@@ -338,7 +338,7 @@ a {
 }
 .custom-buttons {
     position: absolute; 
-    left: -18rem;
+    left: -24rem;
     gap: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -354,32 +354,34 @@ a {
     background-color:#0072ED;
     color: var(--color-light);
 }
-.main__cars-logo {
-    padding-block: 23px;
-    min-height: 120px;
+.carousel {
     display: flex;
-    gap: 40px;
-    animation: scroll-logo 15s linear infinite ;
-    animation-direction: alternate;
-  }
-  .main__cars-logo img{ 
-    height: 60px;
-  }
-.main__cars-logo--contaier {
-    width: 80%;
-    margin-inline: auto;
-    margin-top: 40px;
     overflow: hidden;
+    max-width: 1200px;
 }
-@keyframes scroll-logo {
-    from {
-        transform: translateX(0);
+.carousel.group.animated:hover {
+    animation-play-state: paused;
+}
+.group:not(.basic) {
+    flex: 0 0 100%;
+}
+.group {
+    display: flex;
+    gap: 2rem;
+    will-change: transform;
+    padding-right: 99rem;
+}
+.group.animated {
+    animation: scrolling 10s linear infinite;
+}
+@keyframes scrolling {
+    0% {
+      transform: translateX(0);
     }
-    to {
-        transform: translateX(-42%);
+    100% {
+      transform: translateX(-100%);
     }
-
-} 
+  }
 .main__customer-reviews {
     background-color: #F2F2F2;
 }
@@ -509,15 +511,3 @@ hr {
 
 
 
-
- /* Адаптивность */
- @media (max-width: 768px) {
-    .slider {
-      grid-template-columns: 1fr;
-    }
-  
-    .slider-navigation {
-      order: 2;
-      margin-top: 20px;
-    }
-}
